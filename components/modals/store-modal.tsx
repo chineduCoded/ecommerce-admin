@@ -18,8 +18,14 @@ import {
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-import { formSchema, storeFormSchemaType } from "@/schemas/store-form"
 import toast from "react-hot-toast"
+
+
+const formSchema = z.object({
+    name: z.string().min(3)
+})
+
+type storeFormSchemaType = z.infer<typeof formSchema>
 
 
 
